@@ -14,10 +14,38 @@ body {
 
 /* Centralizar tudo */
 main {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+}
+
+/* Botão de tema */
+#tema-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Tema claro */
+body.claro {
+    background-color: #ffffff;
+    color: #000;
+}
+
+/* Ajuste nomes no tema claro */
+body.claro .perfil p {
+    color: #333;
+}
+
+body.claro .perfil:hover p {
+    color: #000;
 }
 
 /* Seção */
@@ -44,7 +72,9 @@ h1 {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-
+.perfil a {
+    text-decoration: none;
+}
 /* Imagem */
 .perfil img {
     width: 120px;
@@ -70,4 +100,48 @@ h1 {
 
 .perfil:hover p {
     color: #fff;
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .perfis {
+        gap: 20px;
+    }
+
+    .perfil img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    main {
+        padding: 10px;
+        height: auto; /* evita cortar conteúdo */
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .perfis {
+        flex-wrap: wrap; /* QUEBRA linha */
+        gap: 50px;
+    }
+
+    .perfil img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .perfil p {
+        font-size: 1.4rem;
+    }
 }
